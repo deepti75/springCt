@@ -1,0 +1,20 @@
+<div class="card mt-3" *ngFor="let product of productArray">
+    <div class="card-body">
+        <h4>{{product.pName}}</h4>
+        <hr>
+        <p>{{product.pDescription}}</p>
+       <button class="btn btn-primary" (click)="addtoCart(product)">Add to cart</button>
+    </div>
+</div>
+<h6 class="mt-5" (click)="addProduct()">Cart Product</h6>
+<div class="cartProduct"*ngIf="addCart">
+    <button class="p-3 products">Add to Cart Product</button>
+    <div class="card mt-3" *ngFor="let product of AddCartArray">
+        <div class="card-body">
+            <h4>{{product.pName}}</h4>
+            <hr>
+            <p>{{product.pDescription}}</p>
+            <button class="btn btn-danger" (click)="onRemove(product)">remove</button>
+        </div>
+    </div> 
+</div>
